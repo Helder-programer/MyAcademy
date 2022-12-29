@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/mainStyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>MyAcademy</title>
+    <script src="/js/script.js" defer></script>
+</head>
+
+<body>
+    <nav class="navbar">
+        <ul class="navbar-buttons">
+            <li class="navbar-logo">MyAcademy</li>
+            {{!-- <li class="navbar-logo"><img src="/images/my_academy.png" alt=""></li> --}}
+            <li class="navbar-button"><a href="/">Home</a>
+                <div class="blue-bar"></div>
+            </li>
+            <li class="navbar-button"><a href="/about">Sobre</a>
+                <div class="blue-bar"></div>
+            </li>
+            <li class="navbar-button" id="navbar-dropdown">
+                <a><i class="fa-solid fa-caret-down"></i>Serviços</a>
+                <div class="dropdown-content">
+                    <ul>
+                        <li><a href="#">Designer</a></li>
+                        <li><a href="#">Consultor</a></li>
+                        <li><a href="#">DBA</a></li>
+                    </ul>
+                </div>
+
+            </li>
+            <li class="navbar-button"><a href="/contact">Contato</a>
+                <div class="blue-bar"></div>
+            </li>
+            <li class="navbar-button"><a href="/public/pagesList">Artigos</a>
+                <div class="blue-bar"></div>
+            </li>
+            {{#unless isUser}}
+            <li class="navbar-button"><a href="/public/login">Login</a>
+                <div class="blue-bar"></div>
+            </li>
+            {{/unless}}
+            {{#if isUser}}
+            <li class="navbar-button" id="navbar-dropdown">
+                <a><i class="fa-solid fa-caret-down"></i>Admin</a>
+                <div class="dropdown-content">
+                    <ul>
+                        <li><a href="/auth/registerLanguage">Cadastrar Linguagem de Programação</a></li>
+                        <li><a href="/auth/registerPage">Cadastrar Página</a></li>
+                        <li><a href="/auth/addUser">Cadastrar Usuário</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="navbar-button"><a href="/public/logout">Logout</a>
+                <div class="blue-bar"></div>
+            </li>
+            {{/if}}
+        </ul>
+        <div class="modes-and-mobile-menu">
+            <ul class="modes-for-navegation">
+                <li><i class="fa-solid fa-moon"></i></li>
+                <li><i class="fa-sharp fa-solid fa-sun"></i></li>
+            </ul>
+
+            <div class="menu">
+                <i class="fa-solid fa-bars"></i>
+                <div class="mobile-dropdown-menu">
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about">Sobre</a></li>
+                        <li id="navbar-dropdown">
+                            <a><i class="fa-solid fa-caret-down"></i>Serviços</a>
+                            <div class="dropdown-content">
+                                <ul>
+                                    <li><a href="#">Designer</a></li>
+                                    <li><a href="#">Consultor</a></li>
+                                    <li><a href="#">DBA</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a href="/contact">Contato</a></li>
+                        <li><a href="/public/pagesList">Artigos</a></li>
+                        <li><a href="/public/login">Login</a></li>
+
+                        {{#if isUser}}
+                        <li id="navbar-dropdown">
+                            <a><i class="fa-solid fa-caret-down"></i>Admin</a>
+                            <div class="dropdown-content">
+                                <ul>
+                                    <li><a href="/auth/registerLanguage">Cadastrar Linguagem de Programação</a></li>
+                                    <li><a href="/auth/registerPage">Cadastrar Página</a></li>
+                                    <li><a href="/auth/addUser">Cadastrar Usuário</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a href="/public/logout">Logout</a></li>
+                        {{/if}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    {{{body}}}
+
+
+    <footer>
+        <div class="informations">
+            <p>
+                &copy; My Academy 2022. Todos os direitos reservados.
+            </p>
+
+            <div class="social-medias">
+                <a href="https://www.instagram.com/heldernicollasleao/" target="_blank"><i
+                        class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.facebook.com/helder.nikollas" target="_blank"><i
+                        class="fa-brands fa-facebook"></i></a>
+                <a href="https://github.com/Helder-programer" target="_blank"><i class="fa-brands fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

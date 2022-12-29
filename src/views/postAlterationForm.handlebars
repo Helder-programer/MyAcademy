@@ -1,0 +1,15 @@
+<div class="container">
+    {{#post}}
+    <form action="/auth/updatePost/{{post_id}}" method="post">
+        <div class="text-form">
+            <label for="">Título do post:</label>
+            <input type="text" name="postTitle" class="form-control" autocomplete="off" value="{{post_title}}">
+        </div>
+        <div class="text-form">
+            <label for="">Conteúdo do Post:</label>
+            <textarea name="postContent" id="" cols="30" rows="10" class="form-control">{{post_content}}</textarea>
+        </div>
+        <button type="submit" class="btn-green">Editar</button>
+    </form>
+    {{/post}}
+</div>

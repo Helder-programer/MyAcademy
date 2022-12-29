@@ -1,0 +1,15 @@
+<div class="container">
+    {{#page}}
+    <form action="/auth/addPost/{{page_id}}" method="post">
+        <div class="text-form">
+            <label for="">Título do post:</label>
+            <input type="text" name="postTitle" class="form-control" autocomplete="off">
+        </div>
+        <div class="text-form">
+            <label for="">Conteúdo do Post:</label>
+            <textarea name="postContent" id="" cols="30" rows="10" class="form-control"></textarea>
+        </div>
+        <button type="submit" class="btn-blue">Cadastrar</button>
+    </form>
+    {{/page}}
+</div>

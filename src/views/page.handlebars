@@ -1,0 +1,56 @@
+<header class="page-header">
+    {{#page}}
+    <h1>{{page_title}}</h1>
+    {{/page}}
+
+</header>
+<div class="container-center">
+    <div class="left-container-center">
+        <main>
+            {{#page}}
+
+            {{#if ../isUser}}
+            <a href="/auth/registerPost/{{page_id}}">
+                <button class="btn-blue">
+                    <i class="fa-solid fa-plus"></i>
+                    Cadastrar Post
+                </button>
+            </a>
+            {{/if}}
+            {{/page}}
+            {{#each post}}
+            <section class="section-type-border">
+                <div class="post-title">
+                    <h1>{{post_title}}</h1>
+                    {{#if ../isUser}}
+                    <div class="icons-for-action">
+                        <a href="/auth/deletePost/{{post_id}}"><i class="fa-solid fa-trash"></i></a>
+                        <a href="/auth/editPost/{{post_id}}"><i class="fa-solid fa-pen-to-square"></i></a>
+                    </div>
+                    {{/if}}
+                </div>
+
+                <article>
+                    <p>{{post_content}}</p>
+                </article>
+            </section>
+            {{/each}}
+        </main>
+        {{#page}}
+        <p>Página criada em: {{ formatDate createdAt}}</p>
+        <p>Última modificação em: {{formatDate updatedAt}}</p>
+        {{/page}}
+    </div>
+    <div class="right-container-center">
+        {{#if pageToAside}}
+        <aside>
+            <h3>Conteúdos Relacionados</h3>
+            <ol>
+                {{#each pageToAside}}
+                <li><a href="/public/page/{{page_id}}">{{page_title}}</a></li>
+                {{/each}}
+            </ol>
+        </aside>
+        {{/if}}
+    </div>
+</div>

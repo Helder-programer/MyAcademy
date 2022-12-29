@@ -1,0 +1,24 @@
+<div class="container">
+    <h1>Cadastrar Página</h1>
+    {{#page}}
+    <form action="/auth/updatePage/{{page_id}}" method="post">
+        <div class="text-form">
+            <label for="">Título da página:</label>
+            <input type="text" name="pageTitle" class="form-control" autocomplete="off" value="{{page_title}}">
+        </div>
+    {{/page}}
+
+        <div class="text-form">
+            <label for="">Linguagem de programação:</label>
+            <select name="programmingLanguage" id="" class="form-control">
+                {{#page}}
+                <option value="{{language_id}}" selected>{{language_name}}</option>
+                {{/page}}
+                {{#each programmingLanguage}}
+                <option value="{{language_id}}">{{language_name}}</option>
+                {{/each}}
+            </select>
+        </div>
+        <button type="submit" class="btn-green">Editar</button>
+    </form>
+</div>

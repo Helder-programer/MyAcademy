@@ -1,0 +1,12 @@
+<div class="container">
+    {{#if message}}
+    <p class="message">{{message}}</p>
+    {{/if}}
+    <form action="/auth/addLanguage" method="post">
+        <div class="text-form">
+            <label for="">Nome:</label>
+            <input type="text" name="languageName" class="form-control">
+        </div>
+        <button type="submit" class="btn-blue">Cadastrar</button>
+    </form>
+</div>

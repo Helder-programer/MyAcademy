@@ -1,0 +1,21 @@
+<div class="container">
+    <h1>Cadastrar Página</h1>
+    {{#if message}}
+    <p class="message">{{message}}</p>
+    {{/if}}
+    <form action="/auth/addPage" method="post">
+        <div class="text-form">
+            <label for="">Título da página:</label>
+            <input type="text" name="pageTitle" class="form-control" autocomplete="off">
+        </div>
+        <div class="text-form">
+            <label for="">Línguagem de programação:</label>
+            <select name="programmingLanguage" id="" class="form-control">
+                {{#each programmingLanguage}}
+                <option value="{{language_id}}">{{language_name}}</option>
+                {{/each}}
+            </select>
+        </div>
+        <button type="submit" class="btn-blue">Cadastrar</button>
+    </form>
+</div>
